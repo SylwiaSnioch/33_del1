@@ -4,6 +4,16 @@ public class Player {
     private int point;
     private int lastdice1;
     private int lastdice2;
+    private String playerName;
+
+    public Player(String name){
+        playerName = name;
+    }
+
+    public String getName() {
+        return playerName;
+    }
+
     public int getPoint() {
         return point;
     }
@@ -26,4 +36,7 @@ public class Player {
     public void setlastdice2(int eyes) {
         lastdice2 = eyes;
     }
+
+
+
 }
