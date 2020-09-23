@@ -35,7 +35,6 @@ public class DiceCup {
         for (int i = 0; i < 1001; i++) {
             rollDice();
             System.out.println("You rolled " + dice1 + " and " + dice2);
-            System.out.println("test");
         }
     }
 
