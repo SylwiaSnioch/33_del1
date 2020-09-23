@@ -33,6 +33,10 @@ public class DiceCup {
         return dice2;
     }
 
+    public int getSum() {
+        return dice1 + dice2;
+    }
+
     // Vi anvender os af boolsk udtryk og tjekker om dice1 er tilsvarende til dice2 værdien.
     public boolean isSimiliar() {
         return dice1 == dice2;
