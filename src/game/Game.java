@@ -11,7 +11,7 @@ public class Game {
     public Game()
     {
         dice = new DiceCup();
-        player1 = new Player("player25");
+        player1 = new Player("player1");
         player2 = new Player("player2");
 
     }
