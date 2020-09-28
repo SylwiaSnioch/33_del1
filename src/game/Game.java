@@ -4,15 +4,12 @@ import dice.DiceCup;
 import player.Player;
 
 public class Game {
-    public int lol;
-
     private Player player1;
     private Player player2;
     private DiceCup dice;
 
     public Game()
     {
-        lol=4;
         dice = new DiceCup();
         player1 = new Player("player1");
         player2 = new Player("player2");
