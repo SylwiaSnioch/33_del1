@@ -14,6 +14,9 @@ public class Game {
     {
         lol=4;
         dice = new DiceCup();
+        player1 = new Player("player1");
+        player2 = new Player("player2");
+
     }
 
     public void turn1()
@@ -23,14 +26,14 @@ public class Game {
         System.out.println(dice.getDice1());
         System.out.println(dice.getDice2());
 
-        /*
-        player1 roll dice
+
+        // player1 roll dice
         dice.rollDice();
         point = dice.getSum();
         player1.addPoint(point);
         System.out.println("player1 points");
-        System.out.println(player1.getPoints());
-        if (player1.getPoints() > 40)
+        System.out.println(player1.getPoint());
+        if (player1.getPoint() > 40)
         {
             System.out.println("game over");
             return;
@@ -39,7 +42,7 @@ public class Game {
         {
             turn2();
         }
-         */
+
     }
     public void turn2()
     {
@@ -48,14 +51,14 @@ public class Game {
         System.out.println(dice.getDice1());
         System.out.println(dice.getDice2());
 
-        /*
-        player1 roll dice
+
+        //player2 roll dice
         dice.rollDice();
         point = dice.getSum();
         player2.addPoint(point);
         System.out.println("player2 points");
-        System.out.println(player2.getPoints());
-        if (player2.getPoints() > 40)
+        System.out.println(player2.getPoint());
+        if (player2.getPoint() > 40)
         {
             System.out.println("game over");
             return;
@@ -64,7 +67,7 @@ public class Game {
         {
             turn1();
         }
-         */
+
     }
 
 }
