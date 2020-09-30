@@ -42,6 +42,11 @@ public class DiceCup {
         return dice1 == dice2;
     }
 
+    // En boolean som tjekker om spilleren slår to 1'er
+    public boolean twoOne() {
+        return dice1 == 1 && dice2 == 1;
+    }
+
     // Vi anvender os af et loop og gentager handlingen 1000 gange for at se om rollDice() virker
     public void test() {
         for (int i = 0; i < 1001; i++) {
