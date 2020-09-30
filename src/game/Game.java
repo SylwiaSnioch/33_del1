@@ -14,7 +14,6 @@ public class Game {
 
     public Game()
     {
-        // delete me
         input = new Scanner(System.in);
         dice = new DiceCup();
         player1 = new Player("player1");
@@ -41,6 +40,7 @@ public class Game {
             if (player1.getPoint() > 40)
             {
                 System.out.println("game over");
+                System.out.println(player1.getName() + " has won the game");
                 return;
             }
             else
@@ -75,6 +75,7 @@ public class Game {
             if (player2.getPoint() > 40)
             {
                 System.out.println("game over");
+                System.out.println(player2.getName() + " has won the game");
                 return;
             }
             else
