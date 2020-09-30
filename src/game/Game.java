@@ -3,7 +3,6 @@ package game;
 import dice.DiceCup;
 import player.Player;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Game {
