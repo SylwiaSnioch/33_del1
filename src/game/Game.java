@@ -60,12 +60,10 @@ public class Game {
 
             turn2();
 
-
         }
 
-
-
     }
+
     public void turn2()
     {
 
