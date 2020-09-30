@@ -31,6 +31,9 @@ public class Game {
     public void turn1()
     {
 
+        if (player1.getPoint() >= 40)
+            System.out.println(player1.getName() + " has to roll two identical to win the game.");
+
         System.out.println(player1.getName() + " write 'roll' to dice");
         if ("roll".equalsIgnoreCase(input.nextLine()))
         {
@@ -49,16 +52,17 @@ public class Game {
                 System.out.println(player1.getName() + " gets an extra turn!");
                 turn1();
                 return;
-            } else if (player1.getPoint() > 40 && dice.isSimiliar()) {
+            } else if (player1.getPoint() >= 40 && dice.isSimiliar()) {
                 System.out.println(player1.getName() + " has won the game.");
                 return;
             }
 
             player1.addPoint(dice.getSum());
 
-            turn2();
+            if (player1.getPoint() < 40)
+                System.out.println(player1.getName() + " has " + player1.getPoint() + " points.");
 
-            System.out.println(player1.getPoint() > 40 ? "Dice two identical to win the game!" : player1.getName() + "'s points: " + player1.getPoint());
+            turn2();
 
         }
 
@@ -67,7 +71,11 @@ public class Game {
     public void turn2()
     {
 
+        if (player2.getPoint() >= 40)
+            System.out.println(player2.getName() + " has to roll two identical to win the game.");
+
         System.out.println(player2.getName() + " write 'roll' to dice");
+
         if ("roll".equalsIgnoreCase(input.nextLine())) {
             dice.rollDice();
             System.out.println(dice.getDice1());
@@ -84,15 +92,17 @@ public class Game {
                 System.out.println(player2.getName() + " gets an extra turn!");
                 turn2();
                 return;
-            } else if (player2.getPoint() > 40 && dice.isSimiliar()) {
+            } else if (player2.getPoint() >= 40 && dice.isSimiliar()) {
                 System.out.println(player2.getName() + " has won the game");
                 return;
             }
 
             player2.addPoint(dice.getSum());
 
+            if (player2.getPoint() < 40)
+                System.out.println(player2.getName() + " has " + player2.getPoint() + " points.");
+
             turn1();
-            System.out.println(player2.getPoint() > 40 ? "Dice two identical to win the game!" : player2.getName() + "'s points: " + player2.getPoint());
 
         }
     }
