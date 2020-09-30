@@ -56,9 +56,9 @@ public class Game {
 
             player1.addPoint(dice.getSum());
 
-            System.out.println(player1.getPoint() > 40 ? "Dice two identical to win the game!" : player1.getName() + "'s points: " + player1.getPoint());
-
             turn2();
+
+            System.out.println(player1.getPoint() > 40 ? "Dice two identical to win the game!" : player1.getName() + "'s points: " + player1.getPoint());
 
         }
 
@@ -91,9 +91,8 @@ public class Game {
 
             player2.addPoint(dice.getSum());
 
-            System.out.println(player2.getPoint() > 40 ? "Dice two identical to win the game!" : player2.getName() + "'s points: " + player2.getPoint());
-
             turn1();
+            System.out.println(player2.getPoint() > 40 ? "Dice two identical to win the game!" : player2.getName() + "'s points: " + player2.getPoint());
 
         }
     }
