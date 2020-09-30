@@ -32,7 +32,7 @@ public class Game {
     {
 
         System.out.println(player1.getName() + " write 'roll' to dice");
-        if ("roll".equals(input.nextLine()))
+        if ("roll".equalsIgnoreCase(input.nextLine()))
         {
             dice.rollDice();
             System.out.println(dice.getDice1());
@@ -68,7 +68,7 @@ public class Game {
     {
 
         System.out.println(player2.getName() + " write 'roll' to dice");
-        if ("roll".equals(input.nextLine())) {
+        if ("roll".equalsIgnoreCase(input.nextLine())) {
             dice.rollDice();
             System.out.println(dice.getDice1());
             System.out.println(dice.getDice2());
