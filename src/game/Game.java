@@ -14,6 +14,7 @@ public class Game {
 
     public Game()
     {
+        // delete me
         input = new Scanner(System.in);
         dice = new DiceCup();
         player1 = new Player("player1");
