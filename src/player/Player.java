@@ -9,6 +9,9 @@ public class Player {
 
     public Player(String name){
         playerName = name;
+        lastdice1 = 0;
+        lastdice2 = 0;
+
     }
 
     public String getName() {
