@@ -8,10 +8,10 @@ import java.util.Scanner;
 
 public class Game {
 
-    private Player player1;
-    private Player player2;
-    private DiceCup dice;
-    private Scanner input;
+    private final Player player1;
+    private final Player player2;
+    private final DiceCup dice;
+    private final Scanner input;
 
     public Game()
     {
@@ -30,38 +30,37 @@ public class Game {
 
     public void turn1()
     {
-        int point;
-        // player1 roll dice
-        System.out.println("write 'roll' to roll the dice");
+
+        System.out.println(player1.getName() + " write 'roll' to dice");
         if ("roll".equals(input.nextLine()))
         {
             dice.rollDice();
             System.out.println(dice.getDice1());
             System.out.println(dice.getDice2());
 
-            point = dice.getSum();
-            player1.addPoint(point);
-
             if (dice.twoOne()) {
                 System.out.println("You rolled two 1's and lost all of your points.");
                 player1.resetPoint();
-            }
-
-            System.out.println(player1.getName() + " points");
-            System.out.println(player1.getPoint());
-            if (player1.getPoint() > 40)
-            {
-                System.out.println("game over");
+                turn2();
                 return;
             }
-            else
-            {
-                turn2();
+
+            if (player1.getPoint() < 40 && dice.isSimiliar()) {
+                System.out.println(player1.getName() + " gets an extra turn!");
+                turn1();
+                return;
+            } else if (player1.getPoint() > 40 && dice.isSimiliar()) {
+                System.out.println(player1.getName() + " has won the game.");
+                return;
             }
-        }
-        else
-        {
-            turn1();
+
+            player1.addPoint(dice.getSum());
+
+            System.out.println(player1.getPoint() > 40 ? "Dice two identical to win the game!" : player1.getName() + "'s points: " + player1.getPoint());
+
+            turn2();
+
+
         }
 
 
@@ -69,39 +68,35 @@ public class Game {
     }
     public void turn2()
     {
-        int point;
-        //player2 roll dice
-        System.out.println("write 'roll' to roll the dice");
-        if ("roll".equals(input.nextLine()))
-        {
+
+        System.out.println(player2.getName() + " write 'roll' to dice");
+        if ("roll".equals(input.nextLine())) {
             dice.rollDice();
             System.out.println(dice.getDice1());
             System.out.println(dice.getDice2());
 
-            point = dice.getSum();
-            player2.addPoint(point);
-
             if (dice.twoOne()) {
                 System.out.println("You rolled two 1's and lost all of your points.");
-                player1.resetPoint();
-            }
-
-            System.out.println(player2.getName() + " points");
-            System.out.println(player2.getPoint());
-            if (player2.getPoint() > 40)
-            {
-                System.out.println("game over");
+                player2.resetPoint();
+                turn1();
                 return;
             }
-            else
-            {
-                turn1();
+
+            if (player2.getPoint() < 40 && dice.isSimiliar()) {
+                System.out.println(player2.getName() + " gets an extra turn!");
+                turn2();
+                return;
+            } else if (player2.getPoint() > 40 && dice.isSimiliar()) {
+                System.out.println(player2.getName() + " has won the game");
+                return;
             }
 
-        }
-        else
-        {
-            turn2();
+            player2.addPoint(dice.getSum());
+
+            System.out.println(player2.getPoint() > 40 ? "Dice two identical to win the game!" : player2.getName() + "'s points: " + player2.getPoint());
+
+            turn1();
+
         }
     }
 
