@@ -55,7 +55,7 @@ public class Game {
             // player wins if they roll two sixes two turns in a row
             if (dice.getDice1() == 6 && dice.getDice2() == 6 && player1.getlastdice1() == 6 && player1.getLastdice2() == 6)
             {
-                System.out.println("game over");
+                System.out.println("Game over");
                 System.out.println(player1.getName() + " has won the game");
                 return;
             }
@@ -85,7 +85,6 @@ public class Game {
 
             System.out.println();
             turn2();
-            return;
 
         }
         else
@@ -93,7 +92,6 @@ public class Game {
             System.out.println("Please write roll :)");
             System.out.println();
             turn1();
-            return;
         }
 
     }
@@ -121,7 +119,7 @@ public class Game {
             // player wins if they roll two sixes two turns in a row
             if (dice.getDice1() == 6 && dice.getDice2() == 6 && player2.getlastdice1() == 6 && player2.getLastdice2() == 6)
             {
-                System.out.println("game over");
+                System.out.println("Game over");
                 System.out.println(player2.getName() + " has won the game");
                 return;
             }
@@ -151,7 +149,6 @@ public class Game {
 
             System.out.println();
             turn1();
-            return;
 
         }
         else
@@ -159,7 +156,6 @@ public class Game {
             System.out.println("Please write roll :)");
             System.out.println();
             turn2();
-            return;
         }
     }
 
