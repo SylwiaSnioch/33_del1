@@ -2,7 +2,8 @@ package dice;
 
 import java.util.Random;
 
-public class DiceCup {
+public class DiceCup
+{
 
     // Vi anvender os af random klassen til at generere vores terninge værdier
     private final Random random = new Random();
@@ -12,53 +13,61 @@ public class DiceCup {
     private int dice2;
 
     // Vi tester vores dice.test(); funktion
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         DiceCup dice = new DiceCup();
         dice.test();
     }
 
     // Vi indsætter en tilfældig værdi fra 1-6 til vores dice1 og dice2 variabler
-    public void rollDice() {
+    public void rollDice()
+    {
         dice1 = random(6) + 1;
         dice2 = random(6) + 1;
-        dice1 = 6;
-        dice2 = 6;
     }
 
     // Siden vores dice1 variabel er erklæret private anvender vi os af public int get()
-    public int getDice1() {
+    public int getDice1()
+    {
         return dice1;
     }
 
     // Siden vores dice2 variabel er erklæret private anvender vi os af public int get()
-    public int getDice2() {
+    public int getDice2()
+    {
         return dice2;
     }
 
-    public int getSum() {
+    public int getSum()
+    {
         return dice1 + dice2;
     }
 
     // Vi anvender os af boolsk udtryk og tjekker om dice1 er tilsvarende til dice2 værdien.
-    public boolean isSimiliar() {
+    public boolean isSimiliar()
+    {
         return dice1 == dice2;
     }
 
     // En boolean som tjekker om spilleren slår to 1'er
-    public boolean twoOne() {
+    public boolean twoOne()
+    {
         return dice1 == 1 && dice2 == 1;
     }
 
     // Vi anvender os af et loop og gentager handlingen 1000 gange for at se om rollDice() virker
-    public void test() {
-        for (int i = 0; i < 1001; i++) {
+    public void test()
+    {
+        for (int i = 0; i < 1001; i++)
+        {
             rollDice();
             System.out.println("You rolled " + dice1 + " and " + dice2);
         }
     }
 
     // Vores random funktion genererer en værdi (value parameter)
-    public int random(int value) {
+    public int random(int value)
+    {
         return random.nextInt(value);
     }
 

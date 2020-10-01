@@ -1,0 +1,5 @@
+out/
+.idea/codeStyles/codeStyleConfig.xml
+.idea/saveactions_settings.xml
+
+*.java
