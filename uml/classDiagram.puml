@@ -1,7 +1,7 @@
 @startuml
 
-Player <|-- Game
-DiceCup <|-- Game
+Player <-- Game
+DiceCup <-- Game
 
 class Game
 {

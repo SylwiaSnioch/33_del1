@@ -1,0 +1,14 @@
+@startuml
+left to right direction
+Actor Player1 as Player1
+Actor Player2 as Player2
+rectangle "Game System" {
+        (play game) as playgame
+        Player1 -- playgame
+        Player2 -- playgame
+        playgame -- (roll dices)
+        playgame -- (win game)
+}
+
+
+@enduml
