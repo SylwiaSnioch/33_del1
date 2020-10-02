@@ -1,0 +1,54 @@
+@startuml
+
+Player <|-- Game
+DiceCup <|-- Game
+
+class Game
+{
+    private final Player player1
+    private final Player player2
+    private final DiceCup dice
+    private final Scanner input
+    public Game()
+    public void turn1()
+    public void turn2()
+
+}
+
+class DiceCup
+{
+    private final Random
+    private int dice1
+    private int dice2
+
+    public void rollDice()
+    public int getDice1()
+    public int getDice2()
+    public int getSum()
+    public boolean isSimiliar()
+    public boolean twoOne()
+    public void test()
+    public int random(int value)
+}
+
+
+
+class Player
+ {
+     private int point
+     private int lastdice1
+     private int lastdice2
+     private final String playerName
+
+     public Player(String name)
+     public String getName()
+     public int getPoint()
+     public void resetPoint()
+     public void addPoint(int point)
+     public int getlastdice1()
+     public int getLastdice2()
+     public void setlastdice1(int eyes)
+     public void setlastdice2(int eyes)
+ }
+
+@enduml

@@ -19,6 +19,7 @@ public class DiceCup
         dice.test();
     }
 
+
     // Vi indsætter en tilfældig værdi fra 1-6 til vores dice1 og dice2 variabler
     public void rollDice()
     {

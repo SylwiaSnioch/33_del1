@@ -1,0 +1,23 @@
+@startuml
+
+
+state createGame {
+constructScanner --> constructDiceCup : stdin
+constructDiceCup --> inputPlayer1Name
+inputPlayer1Name --> createPlayer1 : getStandardInput()
+createPlayer1 --> inputPlayer2Name
+inputPlayer2Name --> createPlayer2 : getStandardInput()
+}
+
+state gameStart {
+[*] --> turn1
+state fork_state1 <<fork>>
+turn1--> fork_state1
+fork_state1 --> turn2
+fork_state1 --> gameEnd
+state fork_state2 <<fork>>
+turn2 --> fork_state2
+fork_state2 --> turn1
+fork_state2 --> gameEnd
+}
+@enduml

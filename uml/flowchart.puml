@@ -1,0 +1,52 @@
+@startuml
+start
+
+:createGame() ;
+repeat ;
+if (turnX()) then (1)
+    partition "turn1()" {
+    if (diceCup.twoOne()) then (true)
+        :player1.resetPoint();
+    else (false)
+        if (twoSixTwoTurns) then (true)
+            :player1 has won the game;
+            stop
+        else (false)
+            if (player1.getPoint() < 40 &&\n dice.isSimiliar()) then(true)
+                :player1.addPoint();
+                :turn1();
+            else if (player1.getPoint() >= 40 && \n dice.isSimiliar()) then(true)
+                :player1 has won the game;
+                stop
+            else (false)
+                :player1.addPoint();
+                :turn2();
+            endif
+        endif
+    endif
+    }
+else (2)
+    partition "turn2()" {
+        if (diceCup.twoOne()) then (true)
+            :player2.resetPoint();
+        else (false)
+            if (twoSixTwoTurns) then (true)
+                :player2 has won the game;
+                stop
+            else (false)
+                if (player2.getPoint() < 40 &&\n dice.isSimiliar()) then(true)
+                    :player2.addPoint();
+                    :turn2();
+                else if (player1.getPoint() >= 40 && \n dice.isSimiliar()) then(true)
+                    :player2 has won the game;
+                    stop
+                else (false)
+                    :player2.addPoint();
+                    :turn1();
+                endif
+            endif
+        endif
+    }
+endif
+@enduml
+
