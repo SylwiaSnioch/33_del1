@@ -48,7 +48,7 @@ public class DiceCup {
     }
 
     // Vi anvender os af et loop og gentager handlingen 1000 gange for at se om rollDice() virker
-    public void test() {
+    private void test() {
         for (int i = 0; i < 1001; i++) {
             rollDice();
             System.out.println("You rolled " + dice1 + " and " + dice2);
@@ -56,7 +56,7 @@ public class DiceCup {
     }
 
     // Vores random funktion genererer en værdi (value parameter)
-    public int random(int value) {
+    private int random(int value) {
         return random.nextInt(value);
     }
 
